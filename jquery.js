@@ -234,6 +234,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 	return target;
 };						//end of 'jQuery.extend=jQuery.fn.extend=function()'
 
+//括号里全是是jQuery.extend的参数，以对象形式包含在一个大括号里
 jQuery.extend({
 	// Unique for each copy of jQuery on the page
 	expando: "jQuery" + ( version + Math.random() ).replace( /\D/g, "" ),
@@ -566,7 +567,7 @@ jQuery.extend({
 	// jQuery.support is not used in Core but other projects attach their
 	// properties to it so it needs to exist.
 	support: support
-});
+});		//end of 'jQuery.extend(){}'
 
 // Populate the class2type map
 jQuery.each("Boolean Number String Function Array Date RegExp Object Error".split(" "), function(i, name) {
@@ -590,14 +591,8 @@ function isArraylike( obj ) {
 }
 var Sizzle =
 /*!
+Sizzle是一个选择器引擎，单独的模块
  * Sizzle CSS Selector Engine v1.10.16
- * http://sizzlejs.com/
- *
- * Copyright 2013 jQuery Foundation, Inc. and other contributors
- * Released under the MIT license
- * http://jquery.org/license
- *
- * Date: 2014-01-13
  */
 (function( window ) {
 
@@ -2707,7 +2702,7 @@ jQuery.fn.extend({
 });
 
 
-// Initialize a jQuery object
+//初始化一个jq对象
 
 
 // A central reference to the root jQuery(document)
