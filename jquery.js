@@ -55,7 +55,7 @@ var trim = "".trim;
 
 var support = {};
 
-//这个结果很奇怪啊！！！！！！
+//这个结果很奇怪啊！！！！！！包含了所有基本类型
 console.dir(class2type);		
 
 console.log(class2type.toString);
@@ -73,7 +73,8 @@ var
 	rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g,
 
 	// Matches dashed string for camelizing
-	rmsPrefix = /^-ms-/,
+	//匹配以'-ms-'开头的字符串
+	rmsPrefix = /^-ms-/,		
 	rdashAlpha = /-([\da-z])/gi,
 
 	// Used by jQuery.camelCase as callback to replace()
@@ -81,6 +82,7 @@ var
 		return letter.toUpperCase();
 	};
 
+//简单理解为重命名
 jQuery.fn = jQuery.prototype = {
 	// The current version of jQuery being used
 	jquery: version,
@@ -164,8 +166,9 @@ jQuery.fn = jQuery.prototype = {
 	push: push,
 	sort: deletedIds.sort,
 	splice: deletedIds.splice
-};												// end of 'jQuery.fn=jQuery.prototype'
+};						// end of 'jQuery.fn=jQuery.prototype'
 
+//给'jQuery'新添加属性作为方法
 jQuery.extend = jQuery.fn.extend = function() {
 	var src, copyIsArray, copy, name, options, clone,
 		target = arguments[0] || {},
@@ -229,7 +232,7 @@ jQuery.extend = jQuery.fn.extend = function() {
 
 	// Return the modified object
 	return target;
-};
+};						//end of 'jQuery.extend=jQuery.fn.extend=function()'
 
 jQuery.extend({
 	// Unique for each copy of jQuery on the page
